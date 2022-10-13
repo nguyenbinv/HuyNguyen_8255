@@ -1,0 +1,55 @@
+{
+  "TC001_Create_Issues": [
+    {
+      "TestDataPurpose": "Verify that user create issue successfully",
+      "body": {
+        "update": {},
+        "fields": {
+          "summary": "Huy Issue",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "statusCode": 201
+    }
+  ],
+  "TC002_Add_Comments": [
+    {
+      "TestDataPurpose": "Verify that user add comment successfully",
+      "PayLoadCreateIssue": {
+        "update": {},
+        "fields": {
+          "summary": "Huy Issue",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "PayLoadAddComment": {
+        "body": {
+          "version": 1,
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Huy first comment"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "statusCode": 201
+    }
+  ]
+}
