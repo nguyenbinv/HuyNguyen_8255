@@ -9,11 +9,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import common.Constants;
 import org.apache.tools.ant.util.LinkedHashtable;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.*;
 import reportUtils.ExtTest;
 
 import java.io.BufferedReader;
@@ -32,14 +28,11 @@ import static common.Constants.TEST_DATA_JSON;
 public class TestBase {
 
     public ExtentTest logSuite;
-    protected  String stepDescription;
+    protected String stepDescription;
     private String testCaseName;
 
     @BeforeSuite
     public void beforeSuite() throws IOException {
-
-
-//
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss");
         LocalDateTime now = LocalDateTime.now();
         String reportFilePath = OUTPUT_PATH + "/report-" + df.format(now) + ".html";

@@ -20,5 +20,4 @@ public class PropertiesHelper {
         }
         return props.getProperty(key.getText());
     }
-
 }

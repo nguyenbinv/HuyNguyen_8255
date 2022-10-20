@@ -1,11 +1,11 @@
 {
-  "TC001_Create_Issues": [
+  "TC001_Create_Issue": [
     {
-      "TestDataPurpose": "Verify that user create issue successfully",
+      "TestDataPurpose": "Verify That User Can/Cannot Create Issue",
       "body": {
         "update": {},
         "fields": {
-          "summary": "Huy Issue",
+          "summary": "Huy Nguyen Issue",
           "project": {
             "id": "10000"
           },
@@ -14,16 +14,31 @@
           }
         }
       },
-      "statusCode": 201
+      "bodyEmptySummary": {
+        "update": {},
+        "fields": {
+          "summary": "",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "ErrorsSummary": "You must specify a summary of the issue.",
+      "SuccessStatusCode": 201,
+      "BadRequestStatus": 400
     }
   ],
-  "TC002_Add_Comments": [
+  "TC002_Delete_Issue": [
     {
-      "TestDataPurpose": "Verify that user add comment successfully",
+      "TestDataPurpose": "Verify That User Can Delete Issue Successfully",
+      "SuccessStatusCode": 201,
       "PayLoadCreateIssue": {
         "update": {},
         "fields": {
-          "summary": "Huy Issue",
+          "summary": "Huy Nguyen Issue",
           "project": {
             "id": "10000"
           },
@@ -32,24 +47,7 @@
           }
         }
       },
-      "PayLoadAddComment": {
-        "body": {
-          "version": 1,
-          "type": "doc",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "Huy first comment"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "statusCode": 201
+      "ErrorsSummary": "Issue does not exist or you do not have permission to see it."
     }
   ]
 }

@@ -4,6 +4,7 @@
     <test name="API2" parallel="classes" thread-count="1">
         <packages>
             <package name="suites.issues"></package>
+            <package name="suites.comment"></package>
         </packages>
     </test>
 </suite>

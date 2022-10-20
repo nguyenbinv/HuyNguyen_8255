@@ -1,0 +1,108 @@
+{
+  "TC001_Add_Comments": [
+    {
+      "TestDataPurpose": "Verify That User Can/Cannot Comment into Issue",
+      "PayLoadCreateIssue": {
+        "update": {},
+        "fields": {
+          "summary": "Huy Nguyen Issue",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "PayLoadAddComment": {
+        "body": {
+          "version": 1,
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Huy's Comment"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "PayLoadAddCommentEmptyText": {
+        "body": {
+          "version": 1,
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "ErrorsComment": "Comment body can not be empty!",
+      "statusCode": 201,
+      "BadRequestStatus": 400
+    }
+  ],
+  "TC002_Update_Comment": [
+    {
+      "TestDataPurpose": "Verify That User Can Update Comment",
+      "SuccessStatusCode": 200,
+      "PayLoadCreateIssue": {
+        "update": {},
+        "fields": {
+          "summary": "Huy Nguyen Issue",
+          "project": {
+            "id": "10000"
+          },
+          "issuetype": {
+            "id": "10001"
+          }
+        }
+      },
+      "PayLoadAddComment": {
+        "body": {
+          "version": 1,
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Huy's Comment"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "PayLoadUpdateComment": {
+        "body": {
+          "version": 1,
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Huy Comment Updated"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
